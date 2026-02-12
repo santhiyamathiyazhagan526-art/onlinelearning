@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Module 9 Quiz | AI For All</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  padding:40px;
+}
+
+.quiz-box{
+  max-width:700px;
+  background:#ffffff;
+  padding:35px;
+  margin:auto;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2{
+  text-align:center;
+  color:#2f2f7e;
+  margin-bottom:25px;
+}
+
+.question{
+  margin-bottom:20px;
+}
+
+.question p{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+label{
+  display:block;
+  margin:6px 0;
+}
+
+.submit-btn{
+  margin-top:30px;
+  padding:12px 28px;
+  background:#16a34a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  display:block;
+  margin:auto;
+}
+
+.submit-btn:hover{
+  background:#15803d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <h2>Module 9 Quiz – AI Tools & Applications</h2>
+
+  <div class="question">
+    <p>1. Which is an AI framework?</p>
+    <label><input type="radio" name="q1"> TensorFlow</label>
+    <label><input type="radio" name="q1"> HTML</label>
+    <label><input type="radio" name="q1"> CSS</label>
+  </div>
+
+  <div class="question">
+    <p>2. AI in business is mainly used for?</p>
+    <label><input type="radio" name="q2"> Automation</label>
+    <label><input type="radio" name="q2"> Decoration</label>
+    <label><input type="radio" name="q2"> Manual filing</label>
+  </div>
+
+  <div class="question">
+    <p>3. AI in education helps with?</p>
+    <label><input type="radio" name="q3"> Personalized learning</label>
+    <label><input type="radio" name="q3"> Chalk boards</label>
+    <label><input type="radio" name="q3"> Attendance only</label>
+  </div>
+
+  <div class="question">
+    <p>4. Medical imaging uses?</p>
+    <label><input type="radio" name="q4"> AI algorithms</label>
+    <label><input type="radio" name="q4"> Typewriters</label>
+    <label><input type="radio" name="q4"> Paper files</label>
+  </div>
+
+  <div class="question">
+    <p>5. ChatGPT is an example of?</p>
+    <label><input type="radio" name="q5"> AI tool</label>
+    <label><input type="radio" name="q5"> Operating system</label>
+    <label><input type="radio" name="q5"> Browser</label>
+  </div>
+
+  <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+</div>
+
+<script>
+function submitQuiz(){
+  localStorage.setItem("highestUnlockedModule","10");
+  alert("Module 9 Quiz completed successfully!\nModule 10 is now unlocked.");
+  window.location.href="module9.html";
+}
+</script>
+
+</body>
+</html>

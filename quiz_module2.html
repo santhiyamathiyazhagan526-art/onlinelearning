@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<title>Module 2 Quiz | AI For All</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  padding:40px;
+}
+
+.quiz-box{
+  max-width:800px;
+  background:#ffffff;
+  padding:35px;
+  margin:auto;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2{
+  text-align:center;
+  color:#1f2937;
+  margin-bottom:25px;
+}
+
+.question{
+  margin-bottom:25px;
+}
+
+.question p{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+label{
+  display:block;
+  margin:6px 0;
+  cursor:pointer;
+}
+
+.submit-btn{
+  margin-top:30px;
+  padding:12px 28px;
+  background:#16a34a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.submit-btn:hover{
+  background:#15803d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <h2>Module 2 Quiz – தமிழ் இலக்கியத்தில் செயற்கை நுண்ணறிவு (AI)</h2>
+
+  <!-- QUESTION 1 -->
+  <div class="question">
+    <p>1. செயற்கை நுண்ணறிவு (AI) என்பதன் முதன்மை நோக்கம் என்ன?</p>
+    <label><input type="radio" name="q1" value="0"> மனித உணர்வுகளை முற்றிலும் மாற்றுவது</label>
+    <label><input type="radio" name="q1" value="1"> மனித அறிவாற்றலைப் போன்ற செயல்களை இயந்திரங்கள் செய்யச் செய்வது</label>
+    <label><input type="radio" name="q1" value="0"> இலக்கியத்தை அழிப்பது</label>
+    <label><input type="radio" name="q1" value="0"> தமிழ் மொழியின் பயன்பாட்டை குறைப்பது</label>
+  </div>
+
+  <!-- QUESTION 2 -->
+  <div class="question">
+    <p>2. தமிழ் இலக்கிய ஆய்வில் AI பயன்படுத்தப்படுவதன் முக்கிய பயன் எது?</p>
+    <label><input type="radio" name="q2" value="0"> ஆய்வை மெதுவாக்குவது</label>
+    <label><input type="radio" name="q2" value="1"> பெரிய அளவிலான இலக்கிய தரவுகளை விரைவாக பகுப்பாய்வு செய்வது</label>
+    <label><input type="radio" name="q2" value="0"> மனித ஆய்வாளர்களை தேவையற்றதாக மாற்றுவது</label>
+    <label><input type="radio" name="q2" value="0"> இலக்கிய நூல்களை மறைப்பது</label>
+  </div>
+
+  <!-- QUESTION 3 -->
+  <div class="question">
+    <p>3. எதிர்காலத்தில் தமிழ் இலக்கிய ஆய்வில் AI-யின் முக்கிய பங்கு எது?</p>
+    <label><input type="radio" name="q3" value="0"> ஆய்வை முழுமையாக நிறுத்துவது</label>
+    <label><input type="radio" name="q3" value="0"> மனித சிந்தனையை மாற்றுவது</label>
+    <label><input type="radio" name="q3" value="1"> பெரும் அளவிலான இலக்கியங்களை விரைவாகவும் துல்லியமாகவும் ஆய்வு செய்வது</label>
+    <label><input type="radio" name="q3" value="0"> இலக்கியங்களை மறைத்து வைப்பது</label>
+  </div>
+
+  <!-- QUESTION 4 -->
+  <div class="question">
+    <p>4. தமிழ் இலக்கியத்தில் AI வளர்ச்சியால் உருவாகக்கூடிய புதிய வாய்ப்பு எது?</p>
+    <label><input type="radio" name="q4" value="0"> இலக்கியத்தின் அழிவு</label>
+    <label><input type="radio" name="q4" value="1"> மனித–AI இணை படைப்பிலக்கியம்</label>
+    <label><input type="radio" name="q4" value="0"> தமிழ் மொழியின் மறைவு</label>
+    <label><input type="radio" name="q4" value="0"> ஆய்வாளர்களின் தேவையின்மை</label>
+  </div>
+
+  <!-- QUESTION 5 -->
+  <div class="question">
+    <p>5. பழமையான தமிழ் நூல்களை டிஜிட்டல் வடிவில் மாற்ற உதவும் AI தொழில்நுட்பம் எது?</p>
+    <label><input type="radio" name="q5" value="0"> Wi-Fi</label>
+    <label><input type="radio" name="q5" value="0"> GPS</label>
+    <label><input type="radio" name="q5" value="1"> OCR (Optical Character Recognition)</label>
+    <label><input type="radio" name="q5" value="0"> Firewall</label>
+  </div>
+
+  <button class="submit-btn" onclick="submitQuiz()">
+    Submit Quiz
+  </button>
+</div>
+
+<script>
+function submitQuiz(){
+
+  let score = 0;
+
+  for(let i=1; i<=5; i++){
+    let answer = document.querySelector('input[name="q'+i+'"]:checked');
+    if(answer){
+      score += parseInt(answer.value);
+    }
+  }
+
+  if(score >= 3){
+    localStorage.setItem("highestUnlockedModule", "3");
+
+    alert("🎉 வாழ்த்துகள்!\nநீங்கள் Module 2-ஐ வெற்றிகரமாக முடித்துள்ளீர்கள்.\nModule 3 இப்போது திறக்கப்பட்டுள்ளது!");
+    window.location.href = "module2.html";
+  }
+  else{
+    alert("❌ நீங்கள் தேர்ச்சி பெறவில்லை.\nமீண்டும் முயற்சி செய்யவும்.");
+  }
+}
+</script>
+
+</body>
+</html>

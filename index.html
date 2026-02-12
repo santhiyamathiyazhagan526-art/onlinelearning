@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn With Akshayam</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6ff;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #4a6cf7;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #4a6cf7, #7b8cff);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: white;
+      color: #4a6cf7;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e6e9ff;
+    }
+
+    /* Courses Section */
+    .courses {
+      padding: 50px 40px;
+      text-align: center;
+    }
+
+    .courses h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .course-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .course-card h3 {
+      margin-bottom: 10px;
+      color: #4a6cf7;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h2>Learn With Akshayam</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="#">Login</a>
+      <a href="#">Signup</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Build Your Future with Online Learning</h1>
+    <p>Join internships, workshops, and training programs to grow your career.</p>
+    <a href="#" class="btn">Get Started</a>
+  </section>
+
+  <!-- Courses -->
+  <section class="courses">
+    <h2>Popular Courses</h2>
+
+    <div class="course-grid">
+      <div class="course-card">
+        <h3>Web Development</h3>
+        <p>Learn HTML, CSS, JavaScript, and build real projects.</p>
+      </div>
+
+      <div class="course-card">
+        <h3>Flutter App Development</h3>
+        <p>Create Android & iOS apps using Flutter framework.</p>
+      </div>
+
+      <div class="course-card">
+        <h3>Python Programming</h3>
+        <p>Start coding with Python and explore AI & data science.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Learn With Akshayam | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

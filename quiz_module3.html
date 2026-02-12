@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Module 3 Quiz | AI For All</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  padding:40px;
+}
+
+.quiz-box{
+  max-width:750px;
+  background:#ffffff;
+  padding:35px;
+  margin:auto;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2{
+  text-align:center;
+  color:#1f2937;
+  margin-bottom:25px;
+}
+
+.question{
+  margin-bottom:25px;
+}
+
+.question p{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+label{
+  display:block;
+  margin:6px 0;
+  cursor:pointer;
+}
+
+.submit-btn{
+  margin-top:30px;
+  padding:12px 28px;
+  background:#16a34a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.submit-btn:hover{
+  background:#15803d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <h2>Module 3 Quiz – AI in English Literature</h2>
+
+  <!-- QUESTION 1 -->
+  <div class="question">
+    <p>1. AI in English literature mainly acts as?</p>
+    <label><input type="radio" name="q1" value="0"> A replacement for human creativity</label>
+    <label><input type="radio" name="q1" value="1"> A supportive tool for analysis and research</label>
+    <label><input type="radio" name="q1" value="0"> A method to eliminate books</label>
+    <label><input type="radio" name="q1" value="0"> A purely entertainment tool</label>
+  </div>
+
+  <!-- QUESTION 2 -->
+  <div class="question">
+    <p>2. Which AI technology helps machines understand and analyze language?</p>
+    <label><input type="radio" name="q2" value="0"> Computer Vision</label>
+    <label><input type="radio" name="q2" value="1"> Natural Language Processing (NLP)</label>
+    <label><input type="radio" name="q2" value="0"> Robotics</label>
+    <label><input type="radio" name="q2" value="0"> Hardware Engineering</label>
+  </div>
+
+  <!-- QUESTION 3 -->
+  <div class="question">
+    <p>3. AI-based authorship studies use which method?</p>
+    <label><input type="radio" name="q3" value="0"> Painting analysis</label>
+    <label><input type="radio" name="q3" value="1"> Stylometry</label>
+    <label><input type="radio" name="q3" value="0"> Architecture design</label>
+    <label><input type="radio" name="q3" value="0"> Agriculture mapping</label>
+  </div>
+
+  <!-- QUESTION 4 -->
+  <div class="question">
+    <p>4. Which AI tool is used for digitizing old literary manuscripts?</p>
+    <label><input type="radio" name="q4" value="0"> Firewall</label>
+    <label><input type="radio" name="q4" value="0"> GPS</label>
+    <label><input type="radio" name="q4" value="1"> Optical Character Recognition (OCR)</label>
+    <label><input type="radio" name="q4" value="0"> Bluetooth</label>
+  </div>
+
+  <!-- QUESTION 5 -->
+  <div class="question">
+    <p>5. One major ethical concern of AI in literature is?</p>
+    <label><input type="radio" name="q5" value="1"> Plagiarism and authorship issues</label>
+    <label><input type="radio" name="q5" value="0"> Increasing library space</label>
+    <label><input type="radio" name="q5" value="0"> Book binding problems</label>
+    <label><input type="radio" name="q5" value="0"> Paper shortage</label>
+  </div>
+
+  <button class="submit-btn" onclick="submitQuiz()">
+    Submit Quiz
+  </button>
+</div>
+
+<script>
+function submitQuiz(){
+
+  let score = 0;
+
+  for(let i=1; i<=5; i++){
+    let answer = document.querySelector('input[name="q'+i+'"]:checked');
+    if(answer){
+      score += parseInt(answer.value);
+    }
+  }
+
+  if(score >= 3){
+    localStorage.setItem("highestUnlockedModule", "4");
+
+    alert("🎉 Congratulations!\nYou passed Module 3.\nModule 4 is now unlocked!");
+    window.location.href = "module3.html";
+  }
+  else{
+    alert("❌ You did not pass.\nPlease try again.");
+  }
+}
+</script>
+
+</body>
+</html>

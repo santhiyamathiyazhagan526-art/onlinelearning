@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Module 4 Quiz | AI For All</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  padding:40px;
+}
+
+.quiz-box{
+  max-width:750px;
+  background:#ffffff;
+  padding:35px;
+  margin:auto;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2{
+  text-align:center;
+  color:#2f2f7e;
+  margin-bottom:25px;
+}
+
+.question{
+  margin-bottom:25px;
+}
+
+.question p{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+label{
+  display:block;
+  margin:6px 0;
+  cursor:pointer;
+}
+
+.submit-btn{
+  margin-top:30px;
+  padding:12px 28px;
+  background:#16a34a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.submit-btn:hover{
+  background:#15803d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <h2>Module 4 Quiz – AI in Physics</h2>
+
+  <!-- QUESTION 1 -->
+  <div class="question">
+    <p>1. AI in physics mainly helps in?</p>
+    <label><input type="radio" name="q1" value="1"> Analyzing large and complex datasets</label>
+    <label><input type="radio" name="q1" value="0"> Replacing all physical laws</label>
+    <label><input type="radio" name="q1" value="0"> Eliminating experiments</label>
+  </div>
+
+  <!-- QUESTION 2 -->
+  <div class="question">
+    <p>2. Which experiment generates massive data analyzed using AI?</p>
+    <label><input type="radio" name="q2" value="0"> School laboratory experiments</label>
+    <label><input type="radio" name="q2" value="1"> Large Hadron Collider (LHC)</label>
+    <label><input type="radio" name="q2" value="0"> Simple pendulum experiment</label>
+  </div>
+
+  <!-- QUESTION 3 -->
+  <div class="question">
+    <p>3. AI-based surrogate models are mainly used for?</p>
+    <label><input type="radio" name="q3" value="1"> Faster simulations and modeling</label>
+    <label><input type="radio" name="q3" value="0"> Writing textbooks</label>
+    <label><input type="radio" name="q3" value="0"> Drawing physics diagrams</label>
+  </div>
+
+  <!-- QUESTION 4 -->
+  <div class="question">
+    <p>4. One challenge of AI in physics is?</p>
+    <label><input type="radio" name="q4" value="0"> Easy interpretation of models</label>
+    <label><input type="radio" name="q4" value="1"> Black-box nature of AI systems</label>
+    <label><input type="radio" name="q4" value="0"> No data availability</label>
+  </div>
+
+  <!-- QUESTION 5 -->
+  <div class="question">
+    <p>5. AI contributes to which future advancement?</p>
+    <label><input type="radio" name="q5" value="1"> Quantum computing and fusion research</label>
+    <label><input type="radio" name="q5" value="0"> Reducing scientific discovery</label>
+    <label><input type="radio" name="q5" value="0"> Stopping theoretical research</label>
+  </div>
+
+  <button class="submit-btn" onclick="submitQuiz()">
+    Submit Quiz
+  </button>
+</div>
+
+<script>
+function submitQuiz(){
+
+  let score = 0;
+
+  for(let i=1; i<=5; i++){
+    let answer = document.querySelector('input[name="q'+i+'"]:checked');
+    if(answer){
+      score += parseInt(answer.value);
+    }
+  }
+
+  if(score >= 3){
+    localStorage.setItem("highestUnlockedModule","5");
+
+    alert("🎉 Congratulations!\nYou passed Module 4.\nModule 5 is now unlocked!");
+    window.location.href = "module4.html";
+  }
+  else{
+    alert("❌ You did not pass.\nPlease try again.");
+  }
+}
+</script>
+
+</body>
+</html>

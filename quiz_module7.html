@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Module 7 Quiz | AI For All</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  padding:40px;
+}
+
+.quiz-box{
+  max-width:750px;
+  background:#ffffff;
+  padding:35px;
+  margin:auto;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2{
+  text-align:center;
+  color:#2f2f7e;
+  margin-bottom:25px;
+}
+
+.question{
+  margin-bottom:25px;
+}
+
+.question p{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+label{
+  display:block;
+  margin:6px 0;
+  cursor:pointer;
+}
+
+.submit-btn{
+  margin-top:30px;
+  padding:12px 28px;
+  background:#16a34a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  display:block;
+  margin:auto;
+}
+
+.submit-btn:hover{
+  background:#15803d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <h2>Module 7 Quiz – Artificial Intelligence in Mathematics</h2>
+
+  <!-- QUESTION 1 -->
+  <div class="question">
+    <p>1. AI in mathematics mainly helps to?</p>
+    <label><input type="radio" name="q1" value="1"> Solve complex problems and discover patterns</label>
+    <label><input type="radio" name="q1" value="0"> Replace all mathematicians</label>
+    <label><input type="radio" name="q1" value="0"> Remove logical reasoning</label>
+  </div>
+
+  <!-- QUESTION 2 -->
+  <div class="question">
+    <p>2. Automated theorem proving is used for?</p>
+    <label><input type="radio" name="q2" value="1"> Verifying and generating proofs</label>
+    <label><input type="radio" name="q2" value="0"> Designing websites</label>
+    <label><input type="radio" name="q2" value="0"> Managing hardware</label>
+  </div>
+
+  <!-- QUESTION 3 -->
+  <div class="question">
+    <p>3. AI contributes to optimization in mathematics by?</p>
+    <label><input type="radio" name="q3" value="1"> Finding efficient solutions</label>
+    <label><input type="radio" name="q3" value="0"> Increasing manual calculations</label>
+    <label><input type="radio" name="q3" value="0"> Ignoring constraints</label>
+  </div>
+
+  <!-- QUESTION 4 -->
+  <div class="question">
+    <p>4. One major challenge of AI in mathematics is?</p>
+    <label><input type="radio" name="q4" value="1"> Interpretability of AI models</label>
+    <label><input type="radio" name="q4" value="0"> Too much paper usage</label>
+    <label><input type="radio" name="q4" value="0"> Lack of numbers</label>
+  </div>
+
+  <!-- QUESTION 5 -->
+  <div class="question">
+    <p>5. The future of AI in mathematics depends on?</p>
+    <label><input type="radio" name="q5" value="1"> Human–AI collaboration</label>
+    <label><input type="radio" name="q5" value="0"> Complete machine independence</label>
+    <label><input type="radio" name="q5" value="0"> Removing human involvement</label>
+  </div>
+
+  <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+</div>
+
+<script>
+function submitQuiz(){
+
+  let score = 0;
+
+  for(let i=1;i<=5;i++){
+    let ans = document.querySelector('input[name="q'+i+'"]:checked');
+    if(ans){
+      score += parseInt(ans.value);
+    }
+  }
+
+  if(score >= 3){
+    localStorage.setItem("highestUnlockedModule","8");
+    alert("🎉 Congratulations!\nYou passed Module 7.\nModule 8 is now unlocked!");
+    window.location.href="module7.html";
+  }
+  else{
+    alert("❌ You did not pass.\nPlease try again.");
+  }
+}
+</script>
+
+</body>
+</html>

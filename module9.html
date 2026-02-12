@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI For All | Module 9</title>
+
+<link rel="stylesheet" href="assets/css/common.css">
+
+<style>
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.curriculum-layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:300px;
+  background:#ffffff;
+  border-right:1px solid #ddd;
+  padding:20px;
+  overflow-y:auto;
+}
+
+.sidebar h3{
+  font-size:16px;
+  margin-bottom:15px;
+}
+
+.module{
+  margin-bottom:15px;
+  position:relative;
+}
+
+.module-title{
+  font-weight:bold;
+  font-size:14px;
+  padding:8px;
+  background:#e8f5e9;
+}
+
+.module-title a{
+  text-decoration:none;
+  color:#222;
+  display:block;
+}
+
+/* CURRENT MODULE */
+.module.current .module-title{
+  background:#c7ead3;
+}
+
+/* SUB TOPICS */
+.module ul{
+  list-style:none;
+  padding-left:15px;
+  margin-top:8px;
+}
+
+.module ul li{
+  margin:6px 0;
+}
+
+.module ul li a{
+  text-decoration:none;
+  font-size:13px;
+  color:#333;
+}
+
+.module ul li a:hover{
+  color:#2f2f7e;
+  text-decoration:underline;
+}
+
+/* 🔒 LOCKED MODULE */
+.module.locked{
+  filter: blur(3px);
+  opacity:0.6;
+  pointer-events:none;
+}
+
+.module.locked::after{
+  content:"🔒 Complete previous module quiz";
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(0,0,0,0.75);
+  color:#fff;
+  padding:6px 10px;
+  font-size:12px;
+  border-radius:6px;
+}
+
+/* ===== CONTENT ===== */
+.content-area{
+  flex:1;
+  padding:40px;
+}
+
+.content-box{
+  background:#ffffff;
+  padding:40px;
+  max-width:900px;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.course-title{
+  font-size:26px;
+  color:#2f2f7e;
+  margin-bottom:20px;
+}
+
+.course-desc h2{
+  margin-top:40px;
+  scroll-margin-top:120px;
+}
+
+.course-desc p{
+  font-size:15px;
+  line-height:1.8;
+}
+
+/* QUIZ BUTTON */
+.quiz-btn{
+  margin-top:40px;
+  padding:14px 30px;
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.quiz-btn:hover{
+  background:#1e40af;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="curriculum-layout">
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <h3>Course Outline</h3>
+
+  <div class="module"><div class="module-title"><a href="course_curriculum.html">Module 1: Introduction to AI For All</a></div></div>
+  <div class="module"><div class="module-title"><a href="module2.html">Module 2: Basics of Artificial Intelligence</a></div></div>
+  <div class="module"><div class="module-title"><a href="module3.html">Module 3: AI in Everyday Life</a></div></div>
+  <div class="module"><div class="module-title"><a href="module4.html">Module 4: Machine Learning Fundamentals</a></div></div>
+  <div class="module"><div class="module-title"><a href="module5.html">Module 5: Deep Learning & Neural Networks</a></div></div>
+  <div class="module"><div class="module-title"><a href="module6.html">Module 6: Natural Language Processing</a></div></div>
+  <div class="module"><div class="module-title"><a href="module7.html">Module 7: Computer Vision</a></div></div>
+  <div class="module"><div class="module-title"><a href="module8.html">Module 8: Ethical AI & Responsible Use</a></div></div>
+
+  <!-- MODULE 9 (CURRENT) -->
+  <div class="module current">
+    <div class="module-title">Module 9: AI Tools & Applications</div>
+    <ul>
+      <li><a href="#topic-9-1">9.1 Popular AI Tools</a></li>
+      <li><a href="#topic-9-2">9.2 AI in Business</a></li>
+      <li><a href="#topic-9-3">9.3 AI in Education</a></li>
+      <li><a href="#topic-9-4">9.4 AI in Healthcare</a></li>
+    </ul>
+  </div>
+
+  <!-- MODULE 10 (LOCKED) -->
+  <div class="module locked" id="module10">
+    <div class="module-title"><a href="module10.html">Module 10: Future of AI & Careers</a></div>
+  </div>
+</aside>
+
+<!-- ===== CONTENT ===== -->
+<main class="content-area">
+  <div class="content-box">
+
+    <div class="course-title">Module 9: AI Tools & Applications</div>
+
+    <div class="course-desc">
+      <h2 id="topic-9-1">9.1 Popular AI Tools</h2>
+      <p>Popular AI tools include ChatGPT, TensorFlow, PyTorch, OpenCV, and AutoML platforms.</p>
+
+      <h2 id="topic-9-2">9.2 AI in Business</h2>
+      <p>AI helps businesses with automation, customer support, forecasting, and fraud detection.</p>
+
+      <h2 id="topic-9-3">9.3 AI in Education</h2>
+      <p>AI enables personalized learning, intelligent tutoring, and automated assessment.</p>
+
+      <h2 id="topic-9-4">9.4 AI in Healthcare</h2>
+      <p>AI supports diagnosis, medical imaging, patient monitoring, and drug discovery.</p>
+
+      <button class="quiz-btn" onclick="goToQuiz()">Take Module 9 Quiz</button>
+    </div>
+
+  </div>
+</main>
+
+</div>
+
+<div id="footer"></div>
+
+<script src="assets/js/include.js"></script>
+<script>
+loadHTML("header","header.html");
+loadHTML("footer","footer.html");
+
+function goToQuiz(){
+  window.location.href="quiz_module9.html";
+}
+
+/* UNLOCK LOGIC */
+document.addEventListener("DOMContentLoaded", ()=>{
+  let highest = parseInt(localStorage.getItem("highestUnlockedModule")) || 1;
+  if(highest >= 10){
+    const m=document.getElementById("module10");
+    m.classList.remove("locked");
+    m.style.pointerEvents="auto";
+    m.style.filter="none";
+    m.style.opacity="1";
+  }
+});
+</script>
+
+</body>
+</html>

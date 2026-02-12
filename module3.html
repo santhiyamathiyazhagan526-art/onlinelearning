@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI For All | Module 3</title>
+
+<link rel="stylesheet" href="assets/css/common.css">
+
+<style>
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.curriculum-layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:300px;
+  background:#ffffff;
+  border-right:1px solid #ddd;
+  padding:20px;
+  overflow-y:auto;
+}
+
+.sidebar h3{
+  font-size:16px;
+  margin-bottom:15px;
+}
+
+.module{
+  margin-bottom:15px;
+  position:relative;
+}
+
+.module-title{
+  font-weight:bold;
+  font-size:14px;
+  padding:8px;
+  background:#e8f5e9;
+}
+
+.module-title a{
+  text-decoration:none;
+  color:#222;
+  display:block;
+}
+
+.module.current .module-title{
+  background:#c7ead3;
+}
+
+.module ul{
+  list-style:none;
+  padding-left:15px;
+  margin-top:8px;
+}
+
+.module ul li{
+  margin:6px 0;
+}
+
+.module ul li a{
+  text-decoration:none;
+  font-size:13px;
+  color:#333;
+}
+
+.module ul li a:hover{
+  color:#2f2f7e;
+  text-decoration:underline;
+}
+
+/* LOCKED */
+.module.locked{
+  filter: blur(3px);
+  opacity:0.6;
+  pointer-events:none;
+}
+
+.module.locked::after{
+  content:"🔒 Complete previous module quiz";
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(0,0,0,0.75);
+  color:#fff;
+  padding:6px 10px;
+  font-size:12px;
+  border-radius:6px;
+}
+
+/* CONTENT */
+.content-area{
+  flex:1;
+  padding:40px;
+}
+
+.content-box{
+  background:#ffffff;
+  padding:40px;
+  max-width:900px;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.course-title{
+  font-size:26px;
+  color:#2f2f7e;
+  margin-bottom:20px;
+}
+
+.course-desc h2{
+  margin-top:40px;
+  scroll-margin-top:120px;
+}
+
+.course-desc p{
+  font-size:15px;
+  line-height:1.8;
+  margin-bottom:15px;
+}
+
+/* QUIZ BUTTON */
+.quiz-btn{
+  margin-top:40px;
+  padding:14px 30px;
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.quiz-btn:hover{
+  background:#1e40af;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="curriculum-layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h3>Course Outline</h3>
+
+  <div class="module">
+    <div class="module-title">
+      <a href="course_curriculum.html">Module 1: Introduction to AI For All</a>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="module-title">
+      <a href="module2.html">Module 2: AI in Tamil Literature</a>
+    </div>
+  </div>
+
+  <!-- CURRENT -->
+  <div class="module current">
+    <div class="module-title">
+      Module 3: AI in English Literature
+    </div>
+    <ul>
+      <li><a href="#intro">3.1 Introduction</a></li>
+      <li><a href="#understanding">3.2 Understanding AI in Literature</a></li>
+      <li><a href="#role">3.3 Role of AI in Literary Studies</a></li>
+      <li><a href="#scope">3.4 Scope of AI</a></li>
+      <li><a href="#important">3.5 Important Aspects</a></li>
+      <li><a href="#challenges">3.6 Challenges</a></li>
+      <li><a href="#future">3.7 Future Prospects</a></li>
+      <li><a href="#conclusion">3.8 Conclusion</a></li>
+    </ul>
+  </div>
+
+  <!-- LOCKED MODULES -->
+  <div class="module locked" id="module4"><div class="module-title"><a href="module4.html">Module 4</a></div></div>
+  <div class="module locked" id="module5"><div class="module-title"><a href="module5.html">Module 5</a></div></div>
+  <div class="module locked" id="module6"><div class="module-title"><a href="module6.html">Module 6</a></div></div>
+  <div class="module locked" id="module7"><div class="module-title"><a href="module7.html">Module 7</a></div></div>
+  <div class="module locked" id="module8"><div class="module-title"><a href="module8.html">Module 8</a></div></div>
+  <div class="module locked" id="module9"><div class="module-title"><a href="module9.html">Module 9</a></div></div>
+  <div class="module locked" id="module10"><div class="module-title"><a href="module10.html">Module 10</a></div></div>
+</aside>
+
+<!-- CONTENT -->
+<main class="content-area">
+  <div class="content-box">
+
+    <div class="course-title">Module 3: AI in English Literature</div>
+
+    <div class="course-desc">
+
+      <h2 id="intro">3.1 Introduction</h2>
+      <p><p>
+English literature has continuously evolved in response to major social, cultural, and technological transformations. From oral storytelling traditions and handwritten manuscripts to the invention of the printing press and digital publishing, literature has always adapted to innovation. In the twenty-first century, Artificial Intelligence (AI) has emerged as one of the most transformative technologies influencing nearly every discipline. Its impact is visible not only in science and engineering but also in humanities, including English literary studies. AI introduces new ways of reading, analyzing, preserving, and creating literary texts. With the growth of digital archives and online databases, scholars now deal with massive amounts of textual data. AI enables efficient processing of such data in ways that were previously impossible. It assists researchers in identifying patterns, themes, stylistic trends, and historical shifts across centuries. AI-powered tools also support translation and global dissemination of English literary works. Importantly, AI does not replace human creativity or critical thinking; instead, it complements them. The integration of AI into English literature represents a new chapter in literary scholarship. It bridges the gap between traditional humanities and computational technology. As literature continues to evolve in the digital age, AI becomes an essential partner in expanding its possibilities. This transformation reflects a broader shift toward interdisciplinary research. Thus, AI marks a significant milestone in the ongoing evolution of English literary studies.
+</p></p>
+
+      <h2 id="understanding">3.2 Understanding AI in Literature</h2>
+      <p>
+Artificial Intelligence refers to computer systems designed to simulate human intelligence, including learning, reasoning, language understanding, and decision-making. In literary studies, AI functions through technologies such as Natural Language Processing (NLP), Machine Learning (ML), text mining, and generative models. Traditionally, the study of English literature relied on close reading, interpretation, and theoretical analysis. While these methods remain important, AI introduces computational approaches that expand analytical capabilities. NLP allows machines to understand grammar, syntax, and semantic meaning in literary texts. Machine learning models can analyze large corpora and identify hidden patterns. Text mining tools help detect recurring motifs, character relationships, and narrative structures. AI enables scholars to approach literature both qualitatively and quantitatively. This interdisciplinary approach is often referred to as Digital Humanities. AI enhances research efficiency without eliminating the need for human interpretation. It provides empirical evidence that supports or challenges existing literary theories. However, AI-generated results require careful contextual interpretation. Human scholars remain central to understanding symbolism, irony, and emotional nuance. Therefore, AI should be viewed as an analytical assistant rather than an autonomous critic. The collaboration between computational tools and human insight creates a balanced model of literary exploration. This synergy strengthens the overall depth and scope of English literary studies.
+</p>
+
+      <h2 id="role">3.3 Role of AI in Literary Studies</h2>
+<p>
+AI plays a transformative role in modern literary studies by enhancing textual analysis and research methodologies. One of its primary contributions is large-scale textual analysis across thousands of works. Scholars can analyze entire literary periods within minutes using computational tools. AI identifies thematic patterns such as love, power, colonialism, gender, and identity. It also evaluates stylistic features including sentence length, vocabulary richness, and narrative voice. Sentiment analysis tools measure emotional tone across poems, novels, and plays. AI supports authorship attribution by comparing linguistic fingerprints of writers. This has been particularly useful in Shakespearean authorship debates. Stylometry techniques analyze word frequency and syntactic patterns to determine authorship. AI also assists in digitization and preservation of manuscripts through Optical Character Recognition (OCR). Damaged or handwritten texts can be restored and transcribed digitally. Character network analysis maps relationships within complex narratives. AI further supports translation and cross-cultural literary exchange. While AI enhances analytical depth, it does not replace human interpretative judgment. Instead, it provides structured data that enriches scholarly debate. Overall, AI significantly expands the methodological framework of English literary research.
+</p>
+      <h2 id="scope">3.4 Scope of AI</h2>
+<p>
+The scope of AI in English literature is vast and continuously expanding. In academic research, AI enables comparative analysis across centuries, genres, and cultural traditions. Scholars can trace the evolution of literary movements such as Romanticism, Modernism, and Postcolonialism. AI tools allow large-scale corpus analysis that would be impossible through manual reading alone. In education, AI-powered platforms provide personalized learning experiences for students. Automated assessments and intelligent tutoring systems simplify complex literary concepts. AI translation tools expand the global reach of English literature. Literary texts can be translated into multiple languages with increasing accuracy. AI also contributes to creative writing by generating poetry, narratives, and experimental texts. Digital archives supported by AI preserve rare and fragile manuscripts. Accessibility tools assist readers with disabilities through text-to-speech and adaptive technologies. AI encourages interdisciplinary research linking literature with linguistics, sociology, and computer science. The integration of AI reshapes both research and pedagogy. It democratizes access to knowledge by making literary resources widely available. Thus, AI’s scope extends beyond analysis into preservation, education, creativity, and global collaboration.
+</p>
+      <h2 id="important">3.5 Important Aspects</h2>
+      <p>AI should be used as a supportive tool, balancing objectivity with interpretation. Ethical concerns such as plagiarism, bias, and authorship must be addressed responsibly.</p>
+
+      <h2 id="challenges">3.6 Challenges</h2>
+      <p>Challenges include loss of deep reading habits, over-dependence on algorithms, and mechanical interpretations of literary works.</p>
+
+      <h2 id="future">3.7 Future Prospects</h2>
+      <p>The future includes AI-assisted criticism, immersive digital narratives, intelligent archives, and collaborative creative systems.</p>
+
+      <h2 id="conclusion">3.8 Conclusion</h2>
+      <p>AI enriches English literary studies by expanding research, preservation, teaching, and creativity. The future lies in balanced collaboration between human imagination and intelligent systems.</p>
+
+      <button class="quiz-btn" onclick="goToQuiz()">
+        Take Module 3 Quiz
+      </button>
+
+    </div>
+  </div>
+</main>
+
+</div>
+
+<div id="footer"></div>
+
+<script src="assets/js/include.js"></script>
+<script>
+loadHTML("header","header.html");
+loadHTML("footer","footer.html");
+
+function goToQuiz(){
+  window.location.href="quiz_module3.html";
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  let highest = parseInt(localStorage.getItem("highestUnlockedModule")) || 1;
+
+  for(let i=4;i<=10;i++){
+    const mod=document.getElementById("module"+i);
+    if(i<=highest){
+      mod.classList.remove("locked");
+      mod.style.pointerEvents="auto";
+      mod.style.filter="none";
+      mod.style.opacity="1";
+    }
+  }
+});
+</script>
+
+</body>
+</html>

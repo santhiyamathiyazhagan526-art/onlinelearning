@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI For All | Module 7</title>
+
+<link rel="stylesheet" href="assets/css/common.css">
+
+<style>
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+}
+
+.curriculum-layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:300px;
+  background:#ffffff;
+  border-right:1px solid #ddd;
+  padding:20px;
+  overflow-y:auto;
+}
+
+.sidebar h3{
+  font-size:16px;
+  margin-bottom:15px;
+}
+
+.module{
+  margin-bottom:15px;
+  position:relative;
+}
+
+.module-title{
+  font-weight:bold;
+  font-size:14px;
+  padding:8px;
+  background:#e8f5e9;
+}
+
+.module-title a{
+  text-decoration:none;
+  color:#222;
+  display:block;
+}
+
+.module.current .module-title{
+  background:#c7ead3;
+}
+
+.module ul{
+  list-style:none;
+  padding-left:15px;
+  margin-top:8px;
+}
+
+.module ul li{
+  margin:6px 0;
+}
+
+.module ul li a{
+  text-decoration:none;
+  font-size:13px;
+  color:#333;
+}
+
+.module ul li a:hover{
+  color:#2f2f7e;
+  text-decoration:underline;
+}
+
+/* LOCKED */
+.module.locked{
+  filter: blur(3px);
+  opacity:0.6;
+  pointer-events:none;
+}
+
+.module.locked::after{
+  content:"🔒 Complete previous module quiz";
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(0,0,0,0.75);
+  color:#fff;
+  padding:6px 10px;
+  font-size:12px;
+  border-radius:6px;
+}
+
+/* CONTENT */
+.content-area{
+  flex:1;
+  padding:40px;
+}
+
+.content-box{
+  background:#ffffff;
+  padding:40px;
+  max-width:900px;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.course-title{
+  font-size:26px;
+  color:#2f2f7e;
+  margin-bottom:20px;
+}
+
+.course-desc h2{
+  margin-top:40px;
+  scroll-margin-top:120px;
+}
+
+.course-desc p{
+  font-size:15px;
+  line-height:1.8;
+  margin-bottom:15px;
+}
+
+.quiz-btn{
+  margin-top:40px;
+  padding:14px 30px;
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.quiz-btn:hover{
+  background:#1e40af;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="curriculum-layout">
+
+<aside class="sidebar">
+  <h3>Course Outline</h3>
+
+  <div class="module"><div class="module-title"><a href="course_curriculum.html">Module 1</a></div></div>
+  <div class="module"><div class="module-title"><a href="module2.html">Module 2</a></div></div>
+  <div class="module"><div class="module-title"><a href="module3.html">Module 3</a></div></div>
+  <div class="module"><div class="module-title"><a href="module4.html">Module 4</a></div></div>
+  <div class="module"><div class="module-title"><a href="module5.html">Module 5</a></div></div>
+  <div class="module"><div class="module-title"><a href="module6.html">Module 6</a></div></div>
+
+  <!-- CURRENT -->
+  <div class="module current">
+    <div class="module-title">
+      Module 7: Artificial Intelligence in Mathematics
+    </div>
+    <ul>
+      <li><a href="#intro">7.1 Introduction</a></li>
+      <li><a href="#understanding">7.2 AI in Mathematics</a></li>
+      <li><a href="#role">7.3 Role of AI</a></li>
+      <li><a href="#scope">7.4 Scope</a></li>
+      <li><a href="#aspects">7.5 Important Aspects</a></li>
+      <li><a href="#challenges">7.6 Challenges</a></li>
+      <li><a href="#future">7.7 Future Prospects</a></li>
+      <li><a href="#conclusion">7.8 Conclusion</a></li>
+    </ul>
+  </div>
+
+  <div class="module locked" id="module8"><div class="module-title"><a href="module8.html">Module 8</a></div></div>
+  <div class="module locked" id="module9"><div class="module-title"><a href="module9.html">Module 9</a></div></div>
+  <div class="module locked" id="module10"><div class="module-title"><a href="module10.html">Module 10</a></div></div>
+</aside>
+
+<main class="content-area">
+  <div class="content-box">
+
+    <div class="course-title">
+      Module 7: Artificial Intelligence in Mathematics
+    </div>
+
+    <div class="course-desc">
+
+      <h2 id="intro">7.1 Introduction</h2>
+      <p>Mathematics forms the foundation of science and technology. AI enhances mathematics by assisting in solving complex problems, discovering patterns, and verifying proofs.</p>
+
+      <h2 id="understanding">7.2 AI in Mathematics</h2>
+      <p>AI in mathematics uses machine learning, deep learning, symbolic AI, and reinforcement learning to perform reasoning and pattern discovery.</p>
+
+      <h2 id="role">7.3 Role of AI</h2>
+      <p>AI supports automated theorem proving, optimization, numerical analysis, and conjecture generation.</p>
+
+      <h2 id="scope">7.4 Scope</h2>
+      <p>AI contributes to pure mathematics, applied mathematics, computational mathematics, statistics, and cryptography.</p>
+
+      <h2 id="aspects">7.5 Important Aspects</h2>
+      <p>Key aspects include speed, scalability, automation, reliability, and human–AI collaboration.</p>
+
+      <h2 id="challenges">7.6 Challenges</h2>
+      <p>Challenges include interpretability, data dependency, computational cost, and verification of AI-generated results.</p>
+
+      <h2 id="future">7.7 Future Prospects</h2>
+      <p>AI is expected to help solve open mathematical problems and enhance interdisciplinary research.</p>
+
+      <h2 id="conclusion">7.8 Conclusion</h2>
+      <p>AI acts as a powerful collaborator in mathematics, expanding human capability while preserving logical rigor.</p>
+
+      <button class="quiz-btn" onclick="goToQuiz()">
+        Take Module 7 Quiz
+      </button>
+
+    </div>
+  </div>
+</main>
+
+</div>
+
+<div id="footer"></div>
+
+<script src="assets/js/include.js"></script>
+<script>
+loadHTML("header","header.html");
+loadHTML("footer","footer.html");
+
+function goToQuiz(){
+  window.location.href="quiz_module7.html";
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  let highest = parseInt(localStorage.getItem("highestUnlockedModule")) || 1;
+
+  for(let i=8;i<=10;i++){
+    const mod=document.getElementById("module"+i);
+    if(i<=highest){
+      mod.classList.remove("locked");
+      mod.style.pointerEvents="auto";
+      mod.style.filter="none";
+      mod.style.opacity="1";
+    }
+  }
+});
+</script>
+
+</body>
+</html>

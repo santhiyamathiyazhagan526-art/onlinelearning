@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Final Quiz | AI For All</title>
+
+<!-- ✅ COMMON CSS -->
+<link rel="stylesheet" href="assets/css/common.css">
+
+<style>
+body{
+  font-family:"Segoe UI", Arial, sans-serif;
+  background:#f3f4f6;
+  margin:0;
+}
+
+/* Layout spacing for header/footer */
+.page-wrapper{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.quiz-area{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+/* Quiz card */
+.quiz-wrapper{
+  width:700px;
+  background:#ffffff;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Header */
+.quiz-header{
+  margin-bottom:20px;
+}
+
+.quiz-header h2{
+  margin:0;
+  color:#1f2937;
+}
+
+.progress-bar{
+  width:100%;
+  height:8px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:15px;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:#2f2f7e;
+  transition:width 0.4s ease;
+}
+
+/* Question */
+.question{
+  margin-top:30px;
+  font-size:18px;
+  font-weight:600;
+  color:#111827;
+}
+
+/* Options */
+.option{
+  margin-top:15px;
+  padding:14px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.option:hover{
+  background:#f0fdf4;
+}
+
+.option.selected{
+  background:#dcfce7;
+  border-color:#22c55e;
+  font-weight:600;
+}
+
+/* Buttons */
+.controls{
+  display:flex;
+  justify-content:space-between;
+  margin-top:35px;
+}
+
+button{
+  padding:12px 22px;
+  border:none;
+  border-radius:6px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.prev-btn{
+  background:#2f2f7e;
+  color:#fff;
+}
+
+.next-btn{
+  background:#2f2f7e;
+  color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- QUIZ AREA -->
+  <div class="quiz-area">
+    <div class="quiz-wrapper">
+
+      <div class="quiz-header">
+        <h2>Final Quiz – AI For All</h2>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress"></div>
+        </div>
+      </div>
+
+      <div id="quizContent"></div>
+
+      <div class="controls">
+        <button class="prev-btn" onclick="prevQuestion()">Previous</button>
+        <button class="next-btn" onclick="nextQuestion()">Next</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+</div>
+
+<script src="assets/js/include.js"></script>
+<script>
+loadHTML("header","header.html");
+loadHTML("footer","footer.html");
+
+/* Quiz Logic (unchanged) */
+const questions = [
+  {q:"AI stands for?", options:["Artificial Intelligence","Automated Internet"], ans:0},
+  {q:"Which is an AI application?", options:["Voice Assistant","Calculator"], ans:0},
+  {q:"Machine Learning is part of?", options:["Artificial Intelligence","Web Design"], ans:0},
+  {q:"NLP deals with?", options:["Human Language","Hardware"], ans:0},
+  {q:"Computer Vision works with?", options:["Images & Videos","Audio"], ans:0},
+  {q:"Ethical AI focuses on?", options:["Fairness & Responsibility","Speed only"], ans:0},
+  {q:"Deep Learning uses?", options:["Neural Networks","Databases"], ans:0},
+  {q:"AI in healthcare helps in?", options:["Disease Diagnosis","Typing"], ans:0},
+  {q:"Which is an AI career?", options:["Data Scientist","Accountant"], ans:0},
+  {q:"AI systems should be?", options:["Responsible","Uncontrolled"], ans:0}
+];
+
+let current = 0;
+let answers = new Array(questions.length).fill(null);
+
+function loadQuestion(){
+  const q = questions[current];
+  document.getElementById("quizContent").innerHTML = `
+    <div class="question">${current+1}. ${q.q}</div>
+    ${q.options.map((opt,i)=>`
+      <div class="option ${answers[current]===i?'selected':''}" onclick="selectOption(${i})">
+        ${opt}
+      </div>
+    `).join("")}
+  `;
+  document.getElementById("progress").style.width =
+    ((current+1)/questions.length)*100 + "%";
+}
+
+function selectOption(i){
+  answers[current] = i;
+  loadQuestion();
+}
+
+function nextQuestion(){
+  if(current < questions.length-1){
+    current++;
+    loadQuestion();
+  }else{
+    submitQuiz();
+  }
+}
+
+function prevQuestion(){
+  if(current > 0){
+    current--;
+    loadQuestion();
+  }
+}
+
+function submitQuiz(){
+  let score = 0;
+  answers.forEach((a,i)=>{
+    if(a === questions[i].ans) score++;
+  });
+
+  localStorage.setItem("quizScore", score);
+
+  if(score >= 6){
+    localStorage.setItem("quizPassed","true");
+    window.location.href = "certificate.html";
+  }else{
+    alert("You scored "+score+"/10. Minimum 6 required. Try again.");
+    current = 0;
+    answers.fill(null);
+    loadQuestion();
+  }
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Module 1 Quiz | AI For All</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  padding:40px;
+}
+.quiz-box{
+  max-width:600px;
+  background:#fff;
+  padding:30px;
+  margin:auto;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+.submit-btn{
+  margin-top:20px;
+  padding:12px 24px;
+  background:#16a34a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <h2>Module 1 Quiz</h2>
+
+  <p><strong>1. What does AI stand for?</strong></p>
+  <label><input type="radio"> Artificial Intelligence</label><br>
+
+  <button class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+</div>
+<script>
+function submitQuiz(){
+  localStorage.setItem("highestUnlockedModule","2");
+  alert("Module 1 Quiz completed!");
+  window.location.href="course_curriculum.html";
+}
+</script>
+</body>
+</html>

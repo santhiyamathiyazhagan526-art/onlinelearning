@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI For All | Module 10</title>
+
+<link rel="stylesheet" href="assets/css/common.css">
+
+<style>
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.curriculum-layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:320px;
+  background:#ffffff;
+  border-right:1px solid #e5e7eb;
+  padding:20px;
+}
+
+.sidebar h3{
+  font-size:15px;
+  margin-bottom:15px;
+  color:#111827;
+}
+
+/* ===== MODULE BLOCKS ===== */
+.module{
+  margin-bottom:10px;
+}
+
+.module-title{
+  font-size:14px;
+  font-weight:600;
+  padding:8px 12px;
+  background:#eaf7ee;
+  border-radius:2px;
+}
+
+.module-title a{
+  text-decoration:none;
+  color:#111827;
+  display:block;
+}
+
+/* CURRENT MODULE */
+.module.current .module-title{
+  background:#d1fae5;
+}
+
+/* ===== SUB TOPICS ===== */
+.module ul{
+  list-style:none;
+  padding-left:14px;
+  margin:8px 0 0;
+}
+
+.module ul li{
+  margin:6px 0;
+}
+
+.module ul li a{
+  text-decoration:none;
+  font-size:13px;
+  color:#374151;
+}
+
+.module ul li a:hover{
+  text-decoration:underline;
+}
+
+/* ===== CONTENT ===== */
+.content-area{
+  flex:1;
+  padding:40px;
+}
+
+.content-box{
+  background:#ffffff;
+  padding:40px;
+  max-width:900px;
+  border-radius:6px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.course-title{
+  font-size:26px;
+  color:#1f2937;
+  margin-bottom:20px;
+}
+
+.course-desc h2{
+  margin-top:40px;
+  scroll-margin-top:120px;
+  color:#111827;
+}
+
+.course-desc p{
+  font-size:15px;
+  line-height:1.8;
+  color:#374151;
+}
+
+/* ===== QUIZ BUTTON ===== */
+.quiz-btn{
+  margin-top:40px;
+  padding:12px 20px;
+  background:#2f2f7e;
+  color:#fff;
+  border:none;
+  border-radius:4px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.quiz-btn:disabled{
+  background:#9ca3af;
+  cursor:not-allowed;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="curriculum-layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <h3>Course Outline</h3>
+
+    <div class="module"><div class="module-title"><a href="course_curriculum.html">Module 1: Introduction</a></div></div>
+    <div class="module"><div class="module-title"><a href="module2.html">Module 2: Basics of AI</a></div></div>
+    <div class="module"><div class="module-title"><a href="module3.html">Module 3: AI in Everyday Life</a></div></div>
+    <div class="module"><div class="module-title"><a href="module4.html">Module 4: Machine Learning</a></div></div>
+    <div class="module"><div class="module-title"><a href="module5.html">Module 5: Deep Learning</a></div></div>
+    <div class="module"><div class="module-title"><a href="module6.html">Module 6: NLP</a></div></div>
+    <div class="module"><div class="module-title"><a href="module7.html">Module 7: Computer Vision</a></div></div>
+    <div class="module"><div class="module-title"><a href="module8.html">Module 8: Ethical AI</a></div></div>
+    <div class="module"><div class="module-title"><a href="module9.html">Module 9: AI Tools</a></div></div>
+
+    <!-- CURRENT -->
+    <div class="module current">
+      <div class="module-title">Module 10: Future of AI & Careers</div>
+      <ul>
+        <li><a href="#topic-10-1">10.1 Future Trends</a></li>
+        <li><a href="#topic-10-2">10.2 AI Job Market</a></li>
+        <li><a href="#topic-10-3">10.3 AI Career Paths</a></li>
+        <li><a href="#topic-10-4">10.4 Preparing for AI Career</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="content-area">
+    <div class="content-box">
+
+      <div class="course-title">
+        Module 10: Future of AI & Careers
+      </div>
+
+      <div class="course-desc">
+
+        <h2 id="topic-10-1">10.1 Future Trends in AI</h2>
+        <p>
+          Future AI trends include generative AI, autonomous systems,
+          edge AI, and responsible AI that aligns with human values.
+        </p>
+
+        <h2 id="topic-10-2">10.2 AI and the Job Market</h2>
+        <p>
+          AI is reshaping jobs by automating routine tasks while creating
+          new roles that require analytical and creative skills.
+        </p>
+
+        <h2 id="topic-10-3">10.3 Career Paths in AI</h2>
+        <p>
+          Careers in AI include Data Scientist, Machine Learning Engineer,
+          AI Researcher, AI Consultant, and AI Ethics Specialist.
+        </p>
+
+        <h2 id="topic-10-4">10.4 Preparing for an AI Career</h2>
+        <p>
+          Learning programming, working on projects, understanding data,
+          and staying updated with AI trends are essential.
+        </p>
+
+        <!-- QUIZ BUTTON -->
+        <button class="quiz-btn" id="quizBtn" onclick="goToQuiz()">
+          Start Final Quiz
+        </button>
+
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<div id="footer"></div>
+
+<script src="assets/js/include.js"></script>
+<script>
+loadHTML("header","header.html");
+loadHTML("footer","footer.html");
+
+/* ✅ MARK COURSE COMPLETED */
+localStorage.setItem("module10Completed","true");
+
+/* Quiz button logic */
+function goToQuiz(){
+  window.location.href = "quiz.html";
+}
+</script>
+
+</body>
+</html>
